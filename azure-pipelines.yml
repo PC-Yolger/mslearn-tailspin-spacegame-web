@@ -12,6 +12,20 @@ variables:
   dotnetSdkVersion: '3.1.100'
 
 steps:
+- task: CmdLine@2
+  displayName: 'Configure'
+  inputs:
+    script: |
+      echo $(build.artifactstagingdirectory)
+      echo $(build.artifactstagingdirectory)
+      echo $(build.artifactstagingdirectory)
+      echo $(Release.DefinitionName)
+      echo $(build.artifactstagingdirectory)
+      echo $(Release.EnvironmentName)
+      echo $(build.artifactstagingdirectory)
+      echo $(Release.ReleaseName)
+      echo $(Agent.ReleaseDirectory)
+
 - task: UseDotNet@2
   displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
   inputs:
